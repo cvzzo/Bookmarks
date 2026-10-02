@@ -15,3 +15,9 @@
 local.properties
 /.idea/deploymentTargetSelector.xml
 /.idea/deviceManager.xml
+
+# Release signing: never commit
+/keystore.properties
+*.jks
+*.p12
+*.keystore

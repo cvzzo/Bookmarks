@@ -1,9 +1,20 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
 }
+
+// Release signing: from environment variables on CI, from keystore.properties (not committed) locally.
+val keystoreProperties = Properties().apply {
+    val file = rootProject.file("keystore.properties")
+    if (file.exists()) file.inputStream().use(::load)
+}
+
+fun signingValue(property: String, envVar: String): String? =
+    System.getenv(envVar)?.ifBlank { null } ?: keystoreProperties.getProperty(property)
 
 android {
     namespace = "com.example.bookmarks"
@@ -15,17 +26,31 @@ android {
         applicationId = "com.example.bookmarks"
         minSdk = 24
         targetSdk = 37
-        versionCode = 1
-        versionName = "1.0"
+        // Overridden by CI from the tag: -PversionName=1.2.0 -PversionCode=42
+        versionCode = (findProperty("versionCode") as String?)?.toInt() ?: 1
+        versionName = findProperty("versionName") as String? ?: "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        create("release") {
+            signingValue("storeFile", "SIGNING_STORE_FILE")?.let { storeFile = file(it) }
+            storePassword = signingValue("storePassword", "SIGNING_STORE_PASSWORD")
+            keyAlias = signingValue("keyAlias", "SIGNING_KEY_ALIAS")
+            keyPassword = signingValue("keyPassword", "SIGNING_KEY_PASSWORD")
+        }
     }
 
     buildTypes {
         release {
             optimization {
-                enable = false
+                enable = true
             }
+            // Without a release key (e.g. secrets not configured yet) fall back to the debug key,
+            // so the APK is still installable.
+            val release = signingConfigs.getByName("release")
+            signingConfig = if (release.storeFile != null) release else signingConfigs.getByName("debug")
         }
         // Small, R8-optimized APK signed with the debug key: handy for installing over slow connections.
         create("compact") {
