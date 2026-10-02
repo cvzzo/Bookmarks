@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 108 108">
+  <!-- Bookmarks logo: same artwork as the Android launcher icon (res/drawable/ic_launcher_*). -->
+  <rect width="108" height="108" rx="24" fill="#2B1D14"/>
+  <g transform="translate(54 54) scale(0.84) translate(-54 -54)">
+    <path fill="#F1BB8B" d="M31,33h14.5l5,6h26.5a5,5 0,0 1,5 5v27a5,5 0,0 1,-5 5h-46a5,5 0,0 1,-5 -5v-33a5,5 0,0 1,5 -5z"/>
+    <path fill="#7C4F27" d="M63,39h11v22l-5.5,-4.5l-5.5,4.5z"/>
+    <path fill="none" stroke="#2B1D14" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" d="M34,51l7.5,5.5l-7.5,5.5"/>
+    <path fill="none" stroke="#2B1D14" stroke-width="3.4" stroke-linecap="round" d="M46,63h10"/>
+  </g>
+</svg>

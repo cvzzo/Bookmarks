@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Themed icon (Android 13+): folder silhouette with the ribbon and ">_" cut out. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Scaled so the folder corners stay inside round and squircle masks. -->
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.84"
+        android:scaleY="0.84">
+        <path
+            android:fillColor="#FF000000"
+            android:fillType="evenOdd"
+            android:pathData="M31,33h14.5l5,6h26.5a5,5 0,0 1,5 5v27a5,5 0,0 1,-5 5h-46a5,5 0,0 1,-5 -5v-33a5,5 0,0 1,5 -5z
+                M63,39h11v22l-5.5,-4.5l-5.5,4.5z
+                M33,49.6l10.4,6.9l-10.4,6.9v-4.1l5,-2.8l-5,-2.8z
+                M46,61.3h10v3.4h-10z" />
+    </group>
+</vector>

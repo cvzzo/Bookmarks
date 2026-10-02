@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Bookmarks</string>
+
+    <!-- Dialog titles are written as shell commands (shown after a "$ " prompt). -->
+    <string name="cmd_new_folder">mkdir</string>
+    <string name="cmd_edit_folder">edit dir</string>
+    <string name="cmd_move">mv</string>
+    <string name="cmd_choose_folder">cd</string>
+    <string name="cmd_delete_folder">rm -r %1$s/</string>
+    <string name="cmd_add_link">save link</string>
+    <string name="cmd_edit_link">edit link</string>
+
+    <string name="add_link">nuovo link</string>
+    <string name="new_folder">nuova cartella</string>
+
+    <string name="edit">modifica</string>
+    <string name="move">sposta</string>
+    <string name="share">condividi</string>
+    <string name="copy_url">copia url</string>
+    <string name="refresh_preview">aggiorna titolo</string>
+    <string name="delete">elimina</string>
+    <string name="cancel">annulla</string>
+    <string name="save">salva</string>
+    <string name="create">crea</string>
+    <string name="undo">annulla</string>
+    <string name="back">indietro</string>
+    <string name="more_options">altre opzioni</string>
+
+    <string name="folder_name">nome</string>
+    <string name="folder_color">colore</string>
+    <string name="default_color">colore predefinito</string>
+    <string name="url">url</string>
+    <string name="title_optional">titolo (facoltativo)</string>
+    <string name="folder_label">cartella</string>
+    <string name="invalid_url">indirizzo non valido</string>
+
+    <string name="counts">%1$d dir · %2$d link</string>
+    <string name="section_folders">// cartelle</string>
+    <string name="section_links">// link</string>
+
+    <string name="empty_ls">ls</string>
+    <string name="empty_result">(vuoto)</string>
+    <string name="empty_hint_add">// premi + per salvare un link</string>
+    <string name="empty_hint_share">// o condividilo qui da un\'altra app</string>
+
+    <string name="delete_folder_message">La cartella verrà eliminata insieme a tutte le sue sottocartelle e ai link che contiene.</string>
+    <string name="link_deleted">link eliminato</string>
+    <string name="link_saved">Link salvato</string>
+    <string name="url_copied">url copiato</string>
+    <string name="no_app_to_open">Nessuna app trovata per aprire il link</string>
+</resources>
